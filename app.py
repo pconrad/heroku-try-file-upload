@@ -13,7 +13,8 @@ app = Flask(__name__)
 # This is the path to the upload directory
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 # These are the extension that we are accepting to be uploaded
-app.config['ALLOWED_EXTENSIONS'] = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg', 'gif'])
+app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # 2MB
 
 # For a given file, return whether it's an allowed type or not
 def allowed_file(filename):
@@ -26,7 +27,6 @@ def allowed_file(filename):
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 # Route that will process the file upload
 @app.route('/upload', methods=['POST'])
