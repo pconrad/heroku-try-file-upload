@@ -1,5 +1,12 @@
 *~
 
+uploads/*.png
+uploads/*.jpg
+uploads/*.jpeg
+uploads/*.gif
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
